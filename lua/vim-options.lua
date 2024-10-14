@@ -1,0 +1,15 @@
+vim.cmd('set number')
+vim.cmd('set relativenumber')
+vim.cmd('set tabstop=4')
+vim.cmd('set shiftwidth=2')
+vim.cmd('set autoindent')
+vim.cmd('set mouse=a')
+vim.cmd('set clipboard=unnamed')
+vim.cmd('set cindent')
+vim.g.mapleader = ' '
+--vim.cmd("syntax on")
+--vim.cmd("colorscheme evening")
+--vim.cmd("set background=dark")
+
+vim.cmd('set timeoutlen=500')
+vim.cmd('inoremap kj <Esc>')
