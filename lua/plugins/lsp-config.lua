@@ -22,17 +22,13 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
 
-	  local servers = { "lua_ls", "ts_ls", "tailwindcss" }
+	  local servers = { "lua_ls", "ts_ls", "tailwindcss", "eslint"}
 
 	  for _, lsp in ipairs(servers) do
 		lspconfig[lsp].setup{
 		  capabilities = capabilities,
 		}
 	  end
-
-	  
-	  
-
 
       vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
