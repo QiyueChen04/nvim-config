@@ -13,12 +13,12 @@ return {
 
   {
     'hrsh7th/nvim-cmp',
-	dependencies = {
+    dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-vsnip',  -- VSnip source for nvim-cmp
-      'hrsh7th/vim-vsnip',   -- VSnip snippet engine
-	},
+      'hrsh7th/cmp-vsnip', -- VSnip source for nvim-cmp
+      'hrsh7th/vim-vsnip', -- VSnip snippet engine
+    },
 
     config = function()
       local cmp = require('cmp')
@@ -65,17 +65,17 @@ return {
             autocomplete = { cmp.TriggerEvent.TextChanged },
           },
         }),
-		sources = cmp.config.sources({
-		  { name = 'vsnip' },       -- VSnip for snippets
-		  { name = 'nvim_lsp' },    -- LSP source
-		  { name = 'buffer' },      -- Buffer source
-		})
+        sources = cmp.config.sources({
+          { name = 'vsnip' }, -- VSnip for snippets
+          { name = 'nvim_lsp' }, -- LSP source
+          { name = 'buffer' }, -- Buffer source
+        }),
       })
 
       -- Set up lspconfig.
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-	  
+
       require('lspconfig')['ts_ls'].setup({
         capabilities = capabilities,
       })
