@@ -12,7 +12,7 @@ return {
         require('none-ls.diagnostics.eslint_d'),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettierd.with({
-		  prefer_local = "node_modules/.bin",  -- Use local prettier
+          prefer_local = 'node_modules/.bin', -- Use local prettier
         }),
       },
       require('null-ls').builtins.formatting.stylua.with({

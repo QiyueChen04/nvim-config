@@ -1,7 +1,0 @@
-column_width = 80               # Set maximum line width
-indent_type = "Spaces"          # Use "Tabs" or "Spaces" for indentation
-indent_width = 2                # Number of spaces per indentation
-line_endings = "Unix"           # Can be "Unix" or "Windows"
-quote_style = "AutoPreferSingle" # Use "AutoPreferSingle" or "AlwaysDouble"
-collapse_simple_statement = "Always" # Keep simple statements on the same line
-

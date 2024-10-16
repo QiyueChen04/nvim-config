@@ -6,8 +6,33 @@ return {
 
     config = function()
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
+
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {
+        noremap = true,
+        silent = true,
+      })
+
+      vim.keymap.set(
+        'n',
+        '<leader>lg',
+        builtin.live_grep,
+        { noremap = true, silent = true }
+      )
+
+      vim.keymap.set(
+        'n',
+        '<leader>fdf',
+        ':TelescopeDotfiles<CR>',
+        { noremap = true, silent = true }
+      )
+
+      vim.api.nvim_create_user_command('TelescopeDotfiles', function()
+        builtin.find_files({
+          prompt_title = '< Dotfiles >',
+          cwd = vim.fn.getcwd(), -- Uses the current directory
+          hidden = true,
+        })
+      end, {})
     end,
   },
   {
