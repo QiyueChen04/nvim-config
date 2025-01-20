@@ -1,14 +1,17 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
+	'nvim-treesitter/nvim-treesitter',
+	build = ':TSUpdate',
 
-  config = function()
-    local config = require('nvim-treesitter.configs')
-    config.setup({
-	  auto_install = true,
-	  ensure_installed = {'javascript', 'typescript', 'html', 'tsx'},
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end,
+	config = function()
+		local config = require('nvim-treesitter.configs')
+		config.setup({
+			auto_install = true,
+			ensure_installed = { 'javascript', 'typescript', 'html', 'tsx' },
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+		vim.opt.foldmethod = 'expr'
+		vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+		vim.opt.foldlevel = 99
+	end,
 }
