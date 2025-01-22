@@ -19,8 +19,8 @@ return {
     })
     -- Define custom key mappings for Neoscroll
     local keymap = {
-      ['<C-u>'] = function() require('neoscroll').ctrl_u(1, { duration = 250 }) end,
-      ['<C-d>'] = function() require('neoscroll').ctrl_d(1, { duration = 250 }) end,
+      ['<C-u>'] = function() require('neoscroll').ctrl_u({ duration = 250 }) end,
+      ['<C-d>'] = function() require('neoscroll').ctrl_d({ duration = 250 }) end,
       ['<C-h>'] = function() require('neoscroll').ctrl_b({ duration = 450 }) end,
       ['<C-l>'] = function() require('neoscroll').ctrl_f({ duration = 450 }) end,
       ['<C-k>'] = function()
