@@ -1,3 +1,5 @@
+local languages = { 'javascript', 'typescript', 'html', 'tsx', 'python'}
+
 return {
 	'nvim-treesitter/nvim-treesitter',
 	build = ':TSUpdate',
@@ -6,7 +8,7 @@ return {
 		local config = require('nvim-treesitter.configs')
 		config.setup({
 			auto_install = true,
-			ensure_installed = { 'javascript', 'typescript', 'html', 'tsx' },
+			ensure_installed = languages,
 			highlight = { enable = true },
 			indent = { enable = true },
 		})

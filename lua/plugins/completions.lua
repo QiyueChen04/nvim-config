@@ -1,3 +1,4 @@
+local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright' }
 return {
   {
     'L3MON4D3/LuaSnip',
@@ -11,8 +12,8 @@ return {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
-	  "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-vsnip', -- VSnip source for nvim-cmp
       'hrsh7th/vim-vsnip', -- VSnip snippet engine
     },
@@ -23,9 +24,7 @@ return {
 
       cmp.setup({
         snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end,
+          expand = function(args) require('luasnip').lsp_expand(args.body) end,
         },
         window = {
           completion = cmp.config.window.bordered(),
@@ -65,12 +64,22 @@ return {
           { name = 'vsnip' }, -- VSnip for snippets
           { name = 'nvim_lsp' }, -- LSP source
           { name = 'buffer' }, -- Buffer source
+          { name = 'path' }, -- path source
         }),
       })
 
       -- Set up lspconfig.
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+	
+
+	  local lspconfig = require('lspconfig');
+	  for _, lsp in ipairs(ls) do
+        lspconfig[lsp].setup({
+          capabilities = capabilities,
+        })
+      end
+
 
       require('lspconfig')['ts_ls'].setup({
         capabilities = capabilities,
