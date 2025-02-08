@@ -1,3 +1,5 @@
+local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright' }
+
 return {
   {
     'williamboman/mason.nvim',
@@ -7,12 +9,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = {
-          'lua_ls',
-          'ts_ls',
-          'tailwindcss',
-          'eslint',
-        },
+        ensure_installed = ls,
       })
     end,
   },
@@ -49,28 +46,11 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require('lspconfig')
 
-      local servers = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint' }
-
-      for _, lsp in ipairs(servers) do
+      for _, lsp in ipairs(ls) do
         lspconfig[lsp].setup({
           capabilities = capabilities,
         })
       end
-
-      -- on_attach = function(client, bufnr)
-      -- 	-- Set up keybinding for hover and error diagnostics in a floating window
-      -- 	vim.api.nvim_buf_set_keymap(
-      -- 		bufnr,
-      -- 		'n',
-      -- 		'K',
-      -- 		'<Cmd>lua vim.diagnostic.open_float()<CR>',
-      -- 		{ noremap = true, silent = true }
-      -- 	)
-      -- end
-      --
-      -- vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
-      -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
     end,
   },
 }

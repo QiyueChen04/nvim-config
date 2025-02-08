@@ -1,3 +1,4 @@
+-- for smooth scrolling
 return {
   "declancm/cinnamon.nvim",
   version = "*", -- use latest release
