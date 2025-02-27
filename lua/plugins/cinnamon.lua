@@ -20,7 +20,7 @@ return {
       max_delta = {
         line = false,   -- Maximum distance for line movements before scroll animation is skipped
         column = false, -- Maximum distance for column movements before scroll animation is skipped
-        time = 10000,    -- Maximum duration for a movement (in ms)
+        time = 1000,    -- Maximum duration for a movement (in ms)
       },
       -- Optional post-movement callback
       callback = function()
