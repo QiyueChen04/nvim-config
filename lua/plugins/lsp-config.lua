@@ -1,4 +1,4 @@
-local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright' }
+local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright', 'cssls' }
 
 return {
   {
@@ -51,6 +51,15 @@ return {
           capabilities = capabilities,
         })
       end
+
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+        settings = {
+          css = { validate = true },
+          scss = { validate = true },
+          less = { validate = true },
+        },
+      })
     end,
   },
 }

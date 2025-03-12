@@ -5,6 +5,8 @@ vim.cmd('set shiftwidth=2')
 vim.cmd('set autoindent')
 vim.cmd('set mouse=a')
 vim.cmd('set clipboard=unnamed')
+-- vim.keymap.set("v", "y", '"0y')  -- Yank to register 0
+-- vim.keymap.set("v", "p", '"0p')  -- Paste from register 0
 vim.cmd('set cindent')
 vim.g.mapleader = ' '
 --vim.cmd("syntax on")
