@@ -1,4 +1,4 @@
-local languages = { 'javascript', 'typescript', 'html', 'tsx', 'python', 'css'}
+local languages = { 'javascript', 'typescript', 'html', 'tsx', 'python', 'css', 'c', 'cpp' }
 
 return {
 	'nvim-treesitter/nvim-treesitter',

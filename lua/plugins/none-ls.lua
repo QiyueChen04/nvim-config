@@ -25,6 +25,14 @@ return {
         null_ls.builtins.formatting.black.with({
 		  command = '/Users/jackchen/.local/share/nvim/mason/bin/black'
 		}),
+
+		-- C++ formatter (clang-format)
+        null_ls.builtins.formatting.clang_format.with({
+          extra_args = {
+            '--style=LLVM', -- or LLVM, Mozilla, Google, etc.
+          },
+        }),
+
       },
     })
 

@@ -1,4 +1,4 @@
-local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright', 'cssls' }
+local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright', 'cssls', 'clangd' }
 
 return {
   {

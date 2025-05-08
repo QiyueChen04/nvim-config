@@ -3,8 +3,9 @@ return {
   name = 'catppuccin',
   priority = 1000,
 
-  config = function() 
+  config = function()
 	vim.cmd.colorscheme('catppuccin')
+	-- vim.cmd.colorscheme('catppuccin-latte')
 	vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = 'gray', bold = false })
 	vim.api.nvim_set_hl(0, 'LineNr', { fg = '#ffe5b4', bold = true })
 	vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = 'gray', bold = false })
