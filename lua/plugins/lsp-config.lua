@@ -1,4 +1,5 @@
-local ls = { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright', 'cssls', 'clangd' }
+local ls =
+  { 'lua_ls', 'ts_ls', 'tailwindcss', 'eslint', 'pyright', 'cssls', 'clangd' }
 
 return {
   {
@@ -61,5 +62,10 @@ return {
         },
       })
     end,
+  },
+  {
+    'mfussenegger/nvim-jdtls',
+    ft = { 'java' },
+    config = function() require('jdtls_setup') end,
   },
 }
