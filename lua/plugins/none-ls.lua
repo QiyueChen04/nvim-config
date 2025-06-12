@@ -29,7 +29,8 @@ return {
 		-- C++ formatter (clang-format)
         null_ls.builtins.formatting.clang_format.with({
           extra_args = {
-            '--style=LLVM', -- or LLVM, Mozilla, Google, etc.
+			'--style=file',
+			'--fallback-style=LLVM', -- if the file isn't found
           },
         }),
 
